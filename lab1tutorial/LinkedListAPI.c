@@ -147,6 +147,13 @@ void insertSorted(List *list, void *toBeAdded){
   Node *nodeToBeAdded = initializeNode(toBeAdded);
   Node *nodeToBeCompared = list->head;
 
+  //check if head == null
+  if (list->head == NULL) {
+    list->head = nodeToBeAdded;
+    list->tail = nodeToBeAdded;
+    return;
+  }
+
   //comparing nodes
   if (nodeToBeCompared != NULL){
     while((nodeToBeCompared->next != NULL) && (list->compare(nodeToBeCompared->data,toBeAdded)>= 0)){
