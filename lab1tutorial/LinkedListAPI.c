@@ -153,20 +153,32 @@ void insertSorted(List *list, void *toBeAdded){
     list->tail = nodeToBeAdded;
     return;
   }
-
-  //comparing nodes
-  if (nodeToBeCompared != NULL){
-    while((nodeToBeCompared->next != NULL) && (list->compare(nodeToBeCompared->data,toBeAdded)>= 0)){
-      nodeToBeCompared = nodeToBeCompared->next;
+  while(nodeToBeCompared!=NULL){
+    if(list->compare(nodeToBeCompared->data,toBeAdded) < 0){
+      if(nodeToBeCompared->next == NULL){
+          nodeToBeCompared->next = nodeToBeAdded;
+          nodeToBeAdded->previous = nodeToBeCompared;
+          list->tail = nodeToBeAdded;
+          return;
+      }
+      nodeToBeCompared=nodeToBeCompared->next;
     }
+    else{
+      if (list->head == nodeToBeCompared){
+        list->head = nodeToBeAdded;
+        nodeToBeCompared->previous = nodeToBeAdded;
+        nodeToBeAdded->next = nodeToBeCompared;
+        return;
+      }
+      nodeToBeCompared->previous->next = nodeToBeAdded;
+      nodeToBeAdded->previous = nodeToBeCompared->previous;
+      nodeToBeCompared->previous = nodeToBeAdded;
+      nodeToBeAdded->next = nodeToBeCompared;
+      return;
 
-   //placing nodes
-   nodeToBeCompared = nodeToBeCompared->next;
-   nodeToBeAdded->next = nodeToBeCompared->next;
-   nodeToBeAdded->previous = nodeToBeCompared;
-   nodeToBeCompared->next->previous = nodeToBeAdded;
-   nodeToBeCompared->next = nodeToBeAdded;
+    }
   }
+
   return;
 }
 

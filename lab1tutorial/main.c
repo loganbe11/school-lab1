@@ -14,10 +14,11 @@ int main()
  int four  = 4;
  int five  = 5;
 
- insertBack(list,(void* )one);
- insertBack(list,(void* ) 2);
- insertBack(list,(void* ) 4);
- insertBack(list,(void* ) 5);
+ insertSorted(list,four);
+ insertSorted(list,two);
+ insertSorted(list,four);
+ insertSorted(list,three);
+ insertSorted(list,five);
 
  printf("\nprint list forwards:\n");
  printForward(list);
@@ -41,12 +42,16 @@ void printInt(void *toBePrinted){
 printf("%d \n",toBePrinted);
 }
 int compareIntFunction(const void *first,const void *second){
+printf("\n Comparing %d and %d",first, second);
 if(first==second){
+    printf("\n 0:equal");
     return 0;
 }
 else if(first>second){
+    printf("\n 1:first greater");
     return 1;
 }
+printf("\n -1:second greater");
 return -1;
 }
 

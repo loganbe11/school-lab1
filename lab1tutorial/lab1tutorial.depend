@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1527368051 source:c:\users\logan\desktop\cis2520\lab1tutorial\main.c
+1527377733 source:c:\users\logan\desktop\cis2520\lab1tutorial\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedListAPI.h"
@@ -9,7 +9,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1527367780 source:c:\users\logan\desktop\cis2520\lab1tutorial\linkedlistapi.c
+1527377607 source:c:\users\logan\desktop\cis2520\lab1tutorial\linkedlistapi.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedListAPI.h"
