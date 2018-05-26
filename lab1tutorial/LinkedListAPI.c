@@ -192,7 +192,7 @@ void insertSorted(List *list, void *toBeAdded){
  **/
 int deleteDataFromList(List *list, void *toBeDeleted){
   //check if list exists
-  if(list->NULL){
+  if(list == NULL){
     return EXIT_FAILURE;
   }
   //creating node
