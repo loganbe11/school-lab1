@@ -246,8 +246,8 @@ return -1;
  **/
 void *getFromFront(List *list){
   //check if list exists
-  if(list->head == NULL && list->tail == NULL){
-    return NULL;
+  if(list == NULL){
+    return;
   }
 
   //returns pointer to data located at head of the list.
@@ -261,8 +261,8 @@ void *getFromFront(List *list){
  **/
 void *getFromBack(List *list){
   //check if list exists
-  if(list->head == NULL && list->tail == NULL){
-    return NULL;
+  if(list == NULL){
+    return;
   }
 
   //returns pointer to data located at the tail of the list
@@ -275,7 +275,7 @@ void *getFromBack(List *list){
  **/
 void printForward(List *list){
   //check if list exists
-  if(list->head == NULL && list->tail == NULL){
+  if(list == NULL){
     return;
   }
 
@@ -299,7 +299,7 @@ void printForward(List *list){
  **/
 void printBackwards(List *list){
 //check if list exists
-  if(list->head == NULL && list->tail == NULL){
+  if(list == NULL){
     return;
   }
 
